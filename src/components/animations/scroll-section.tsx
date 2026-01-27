@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react"
 import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
+import { motion, useInView, type Variants } from "framer-motion"
 
 interface ScrollSectionProps {
   children: ReactNode
@@ -10,7 +10,11 @@ interface ScrollSectionProps {
   delay?: number
 }
 
-export function ScrollSection({ children, className, delay = 0 }: ScrollSectionProps) {
+export function ScrollSection({
+  children,
+  className,
+  delay = 0,
+}: ScrollSectionProps) {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
@@ -37,11 +41,15 @@ interface StaggerContainerProps {
   staggerDelay?: number
 }
 
-export function StaggerContainer({ children, className, staggerDelay = 0.1 }: StaggerContainerProps) {
+export function StaggerContainer({
+  children,
+  className,
+  staggerDelay = 0.1,
+}: StaggerContainerProps) {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, margin: "-50px" })
 
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -71,14 +79,14 @@ interface StaggerItemProps {
 }
 
 export function StaggerItem({ children, className }: StaggerItemProps) {
-  const item = {
+  const item: Variants = {
     hidden: { opacity: 0, y: 30, scale: 0.95 },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 20,
         stiffness: 100,
       },
@@ -91,3 +99,4 @@ export function StaggerItem({ children, className }: StaggerItemProps) {
     </motion.div>
   )
 }
+

@@ -4,13 +4,14 @@ import { Space_Grotesk, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const _spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-sans" });
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const _inter = Inter({ subsets: ["latin"], variable: "--font-body" });
 
 export const metadata: Metadata = {
-  title: 'Creative Portfolio',
+  title: 'Portfolio Web',
   description: 'A playful and animated portfolio showcasing creative work',
-  generator: 'v0.app',
   icons: {
     icon: [
       {
