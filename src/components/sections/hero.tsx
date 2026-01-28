@@ -16,22 +16,20 @@ export function HeroSection() {
           transition={{ duration: 0.5 }}
           className="mb-6"
         >
-          <span className="inline-block rounded-full border border-border bg-secondary/50 px-4 py-2 text-sm text-muted-foreground">
-            Available for work
-          </span>
         </motion.div>
 
         <h1 className="mb-6 text-5xl font-bold leading-tight tracking-tight md:text-7xl lg:text-8xl">
-          <CharacterReveal delay={0.2}>Creative</CharacterReveal>
+          <CharacterReveal delay={0.2}>Samuel</CharacterReveal>
           <br />
           <span className="text-primary">
-            <CharacterReveal delay={0.5}>Developer</CharacterReveal>
+            <CharacterReveal delay={0.5}>Sotomayor</CharacterReveal>
           </span>
         </h1>
 
         <p className="mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
           <TextReveal delay={0.8}>
-            I craft immersive digital experiences with playful interactions and thoughtful design. Building the future of the web, one pixel at a time.
+            Ingeniero Civil Informático especializado en Desarrollo de Software Full-Stack.
+            Diseño y construyo aplicaciones escalables, eficientes y orientadas a resolver problemas reales.
           </TextReveal>
         </p>
 
@@ -46,7 +44,7 @@ export function HeroSection() {
               href="#projects"
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-primary px-8 py-4 font-semibold text-primary-foreground transition-transform"
             >
-              <span>View My Work</span>
+              <span>Ver mis proyectos</span>
               <motion.span
                 animate={{ x: [0, 5, 0] }}
                 transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
@@ -61,7 +59,7 @@ export function HeroSection() {
               href="#contact"
               className="inline-flex items-center gap-2 rounded-full border border-border bg-transparent px-8 py-4 font-semibold transition-colors hover:bg-secondary"
             >
-              Get in Touch
+              Ponte en contacto
             </a>
           </MagneticButton>
         </motion.div>
