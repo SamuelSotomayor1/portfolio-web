@@ -1,100 +1,88 @@
 "use client"
 
-import { useState } from "react"
 import { motion } from "framer-motion"
 import { ScrollSection, StaggerContainer, StaggerItem, TextReveal } from "@/components/animations"
+import { Code2, Layout, Server, Database, Wrench, Palette } from "lucide-react"
 
-const skills = [
-  { name: "React", level: 95, category: "Frontend" },
-  { name: "TypeScript", level: 90, category: "Language" },
-  { name: "Next.js", level: 92, category: "Framework" },
-  { name: "Node.js", level: 85, category: "Backend" },
-  { name: "CSS/Tailwind", level: 95, category: "Styling" },
-  { name: "Framer Motion", level: 88, category: "Animation" },
-  { name: "Three.js", level: 75, category: "3D" },
-  { name: "PostgreSQL", level: 80, category: "Database" },
+const skillCategories = [
+  {
+    title: "Lenguajes",
+    icon: Code2,
+    skills: ["JavaScript", "TypeScript", "Python", "C++"],
+  },
+  {
+    title: "Frontend",
+    icon: Layout,
+    skills: ["React", "Angular", "Next.js", "Astro"],
+  },
+  {
+    title: "Backend",
+    icon: Server,
+    skills: ["Node.js", "Express", "Prisma", "NestJS"],
+  },
+  {
+    title: "Bases de Datos",
+    icon: Database,
+    skills: ["MongoDB", "MySQL", "PostgreSQL", "Supabase"],
+  },
+  {
+    title: "Herramientas",
+    icon: Wrench,
+    skills: ["Git & GitHub", "Postman"],
+  },
+  {
+    title: "Estilos & UI",
+    icon: Palette,
+    skills: ["Tailwind CSS", "CSS"],
+  },
 ]
 
-const categories = ["All", "Frontend", "Framework", "Language", "Backend", "Styling", "Animation", "3D", "Database"]
-
 export function SkillsSection() {
-  const [activeCategory, setActiveCategory] = useState("All")
-  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null)
-
-  const filteredSkills = activeCategory === "All" 
-    ? skills 
-    : skills.filter((s) => s.category === activeCategory)
-
   return (
     <section id="skills" className="relative px-6 py-32">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-5xl">
         <ScrollSection>
           <h2 className="mb-4 text-center text-4xl font-bold md:text-5xl lg:text-6xl">
-            <TextReveal>Skills & Expertise</TextReveal>
+            <TextReveal>Skills & Tech Stack</TextReveal>
           </h2>
           <p className="mx-auto mb-16 max-w-2xl text-center text-muted-foreground">
             <TextReveal delay={0.2}>
-              Technologies I love working with to bring ideas to life
+              Tecnologias con las que trabajo para dar vida a las ideas
             </TextReveal>
           </p>
         </ScrollSection>
 
-        <ScrollSection delay={0.2}>
-          <div className="mb-12 flex flex-wrap justify-center gap-2">
-            {categories.map((category) => (
-              <motion.button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                  activeCategory === category
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
-                }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {category}
-              </motion.button>
-            ))}
-          </div>
-        </ScrollSection>
-
-        <StaggerContainer className="grid gap-4 md:grid-cols-2" staggerDelay={0.1}>
-          {filteredSkills.map((skill) => (
-            <StaggerItem key={skill.name}>
+        <StaggerContainer className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" staggerDelay={0.08}>
+          {skillCategories.map((category) => (
+            <StaggerItem key={category.title}>
               <motion.div
-                className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition-colors hover:border-primary/50"
-                onHoverStart={() => setHoveredSkill(skill.name)}
-                onHoverEnd={() => setHoveredSkill(null)}
-                whileHover={{ y: -5 }}
+                className="group relative h-full overflow-hidden rounded-2xl border border-border bg-card/50 p-5 backdrop-blur-sm transition-colors hover:border-primary/50 hover:bg-card"
+                whileHover={{ y: -4, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <div className="mb-4 flex items-center justify-between">
-                  <h3 className="text-xl font-semibold">{skill.name}</h3>
-                  <span className="text-sm text-muted-foreground">{skill.category}</span>
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                    <category.icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="text-lg font-semibold">{category.title}</h3>
                 </div>
                 
-                <div className="relative h-3 overflow-hidden rounded-full bg-secondary">
-                  <motion.div
-                    className="absolute inset-y-0 left-0 rounded-full bg-primary"
-                    initial={{ width: 0 }}
-                    animate={{ width: hoveredSkill === skill.name ? `${skill.level}%` : "0%" }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                  />
-                  <motion.div
-                    className="absolute inset-y-0 left-0 rounded-full bg-primary/30"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${skill.level}%` }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-                  />
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill, idx) => (
+                    <motion.span
+                      key={skill}
+                      className="rounded-lg bg-secondary/80 px-3 py-1.5 text-sm font-medium text-secondary-foreground transition-all hover:bg-primary hover:text-primary-foreground"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: idx * 0.05 }}
+                      whileHover={{ scale: 1.08 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {skill}
+                    </motion.span>
+                  ))}
                 </div>
-                
-                <motion.span
-                  className="absolute right-6 top-6 text-3xl font-bold text-primary/20"
-                  animate={{ opacity: hoveredSkill === skill.name ? 1 : 0.2 }}
-                >
-                  {skill.level}%
-                </motion.span>
               </motion.div>
             </StaggerItem>
           ))}
@@ -103,3 +91,4 @@ export function SkillsSection() {
     </section>
   )
 }
+

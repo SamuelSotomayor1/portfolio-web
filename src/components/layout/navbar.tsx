@@ -7,9 +7,9 @@ import { MagneticButton } from "@/components/animations"
 
 const navLinks = [
   { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Experience", href: "#experience" },
-  { name: "Contact", href: "#contact" },
+  { name: "Proyectos", href: "#proyectos" },
+  { name: "Experiencia", href: "#experiencia" },
+  { name: "Contacto", href: "#contacto" },
 ]
 
 export function Navbar() {
@@ -70,20 +70,6 @@ export function Navbar() {
                 </MagneticButton>
               </motion.li>
             ))}
-            <motion.li
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-            >
-              <MagneticButton>
-                <a
-                  href="#contact"
-                  className="rounded-full bg-primary px-6 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-                >
-                  Hire Me
-                </a>
-              </MagneticButton>
-            </motion.li>
           </ul>
 
           {/* Mobile Menu Button */}
