@@ -16,9 +16,9 @@ const skillCategories = [
     skills: ["React", "Angular", "Next.js", "Astro"],
   },
   {
-    title: "Backend",
+    title: "Backend y Testing",
     icon: Server,
-    skills: ["Node.js", "Express", "Prisma", "NestJS"],
+    skills: ["Node.js", "Express", "Prisma", "NestJS", "Jest"],
   },
   {
     title: "Bases de Datos",
@@ -47,7 +47,7 @@ export function SkillsSection() {
           </h2>
           <p className="mx-auto mb-16 max-w-2xl text-center text-muted-foreground">
             <TextReveal delay={0.2}>
-              Tecnologias con las que trabajo para dar vida a las ideas
+              Tecnologías que utilizo en mi día a día para desarrollar aplicaciones web
             </TextReveal>
           </p>
         </ScrollSection>

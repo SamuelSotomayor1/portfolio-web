@@ -7,35 +7,19 @@ import { ScrollSection, StaggerContainer, StaggerItem, TextReveal } from "@/comp
 const experiences = [
   {
     id: 1,
-    role: "Senior Frontend Developer",
-    company: "Tech Corp",
-    period: "2023 - Present",
-    description: "Leading the frontend architecture and mentoring junior developers. Building scalable design systems.",
-    skills: ["React", "TypeScript", "Next.js", "Design Systems"],
+    role: "Desarrollador de Software Junior (QA / Desarrollo)",
+    company: "Centro de Investigación EduInclusiva",
+    period: "Octubre 2025 - Diciembre 2025",
+    description: "QA y desarrollador junior se realizaron pruebas completas del backend (login, registro y módulos) con Jest",
+    skills: ["MySQL", "Express", "NodeJS", "TypeScript", "Handlebars", "CSS", "Jest", "Github"],
   },
   {
     id: 2,
-    role: "Full Stack Developer",
-    company: "Startup Inc",
-    period: "2021 - 2023",
-    description: "Developed and maintained multiple web applications. Implemented CI/CD pipelines.",
-    skills: ["Node.js", "PostgreSQL", "AWS", "Docker"],
-  },
-  {
-    id: 3,
-    role: "Frontend Developer",
-    company: "Agency Studio",
-    period: "2019 - 2021",
-    description: "Created interactive websites and web applications for various clients across industries.",
-    skills: ["JavaScript", "Vue.js", "GSAP", "Sass"],
-  },
-  {
-    id: 4,
-    role: "Junior Developer",
-    company: "Web Solutions",
-    period: "2018 - 2019",
-    description: "Started my journey building responsive websites and learning modern frameworks.",
-    skills: ["HTML", "CSS", "JavaScript", "jQuery"],
+    role: "Servicio de TI",
+    company: "Ilustre Municipalidad de Iquique",
+    period: "Noviembre 2024 - Marzo 2025",
+    description: "Apoyo en servicios de TI y desarrollo de una página web interna para un área de trabajo.",
+    skills: ["React", "TypeScript", "TailwindCSS", "Github"],
   },
 ]
 
@@ -53,11 +37,11 @@ export function ExperienceSection() {
       <div className="mx-auto max-w-4xl">
         <ScrollSection>
           <h2 className="mb-4 text-center text-4xl font-bold md:text-5xl lg:text-6xl">
-            <TextReveal>Experience</TextReveal>
+            <TextReveal>Experiencia</TextReveal>
           </h2>
           <p className="mx-auto mb-16 max-w-2xl text-center text-muted-foreground">
             <TextReveal delay={0.2}>
-              My professional journey building digital products
+              Mi trayectoria profesional construyendo productos digitales
             </TextReveal>
           </p>
         </ScrollSection>
