@@ -6,7 +6,7 @@ import { CharacterReveal, TextReveal, MagneticButton, FloatingShapes } from "@/c
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 py-20">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 py-20 bg-secondary/30">
       <FloatingShapes />
       
       <div className="relative z-10 mx-auto max-w-5xl text-center">
@@ -28,7 +28,7 @@ export function HeroSection() {
 
         <p className="mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
           <TextReveal delay={0.8}>
-            Ingeniero Civil Informático especializado en Desarrollo de Software Full-Stack.
+            Ingeniero Civil Informático especializado en el Desarrollo de Software Full-Stack.
             Diseño y construyo aplicaciones escalables, eficientes y orientadas a resolver problemas reales.
           </TextReveal>
         </p>

@@ -8,37 +8,19 @@ import { ScrollSection, StaggerContainer, StaggerItem, TextReveal, MagneticButto
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "A modern e-commerce experience with smooth animations and real-time updates",
-    tags: ["Next.js", "TypeScript", "Stripe"],
+    title: "BlackShark Web E-Commerce",
+    description: "Plataforma de e-commerce para ofrecer servicios digitales",
+    tags: ["React", "MySQL", "Node.js", "Express", "Firebase"],
     color: "from-cyan-500/20 to-teal-500/20",
-    link: "#",
-    github: "#",
+    href: "https://github.com/IgnacioBarraza/BlackSharkWeb",
+    github: "https://github.com/IgnacioBarraza/BlackSharkWeb",
   },
   {
     id: 2,
-    title: "Dashboard Analytics",
-    description: "Interactive dashboard with data visualization and real-time metrics",
-    tags: ["React", "D3.js", "PostgreSQL"],
+    title: "El Refugio",
+    description: "Sistema de reservas para restaurantes",
+    tags: ["Angular", "Node.js", "Express", "PostgreSQL", "Prisma"],
     color: "from-orange-500/20 to-amber-500/20",
-    link: "#",
-    github: "#",
-  },
-  {
-    id: 3,
-    title: "Social Media App",
-    description: "Full-stack social platform with real-time messaging and notifications",
-    tags: ["Next.js", "Socket.io", "MongoDB"],
-    color: "from-pink-500/20 to-rose-500/20",
-    link: "#",
-    github: "#",
-  },
-  {
-    id: 4,
-    title: "AI Content Generator",
-    description: "AI-powered content creation tool with natural language processing",
-    tags: ["Python", "OpenAI", "FastAPI"],
-    color: "from-indigo-500/20 to-blue-500/20",
     link: "#",
     github: "#",
   },
@@ -52,11 +34,11 @@ export function ProjectsSection() {
       <div className="mx-auto max-w-6xl">
         <ScrollSection>
           <h2 className="mb-4 text-center text-4xl font-bold md:text-5xl lg:text-6xl">
-            <TextReveal>Selected Work</TextReveal>
+            <TextReveal>Proyectos</TextReveal>
           </h2>
           <p className="mx-auto mb-16 max-w-2xl text-center text-muted-foreground">
             <TextReveal delay={0.2}>
-              A collection of projects that showcase my skills and passion for creating exceptional digital experiences
+              Una lista de mis proyectos que demuestran mis skills y creatividad para construir soluciones digitales.
             </TextReveal>
           </p>
         </ScrollSection>
