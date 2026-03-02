@@ -26,7 +26,7 @@ const projects = [
   },
 ]
 
-export function ProjectsSection() {
+export function Projects() {
   const [hoveredId, setHoveredId] = useState<number | null>(null)
 
   return (

@@ -1,154 +1,145 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { MagneticButton } from "@/components/animations"
+import Link from "next/link"
 
 const navLinks = [
-  { name: "Skills", href: "#skills" },
-  { name: "Proyectos", href: "#projects" },
-  { name: "Experiencia", href: "#experience" },
-  { name: "Contacto", href: "#contact" },
+  { name: "Skills", href: "/skills" },
+  { name: "Proyectos", href: "/projects" },
+  { name: "Experiencia", href: "/experience" },
+  { name: "Contacto", href: "/contact" },
 ]
 
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
 
   return (
     <>
-    <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-        isScrolled
-          ? "bg-[#0A0A0F]/80 backdrop-blur-xl border-b border-[#26263A]"
-          : "bg-transparent"
-      }`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ type: "spring", stiffness: 100, damping: 20 }}
-    >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      {/* HEADER */}
+      <motion.header
+        className="fixed top-0 left-0 right-0 z-50 h-20 bg-[#0B0B0C] border-b"
+        initial={{ y: -80 }}
+        animate={{ y: 0 }}
+        transition={{ type: "spring", stiffness: 120, damping: 20 }}
+      >
+        <nav className="mx-auto flex h-full max-w-6xl items-center justify-between px-6">
 
-        <MagneticButton>
-          <a href="#" className="text-xl font-bold text-slate-100">
-            <motion.span
-              className="inline-block"
-              whileHover={{ scale: 1.1, rotate: -3 }}
+          {/* LOGO */}
+          <MagneticButton>
+            <Link
+              href="/"
+              className="text-xl font-bold tracking-wide text-[#F5F5F7]"
             >
-              Portfolio
-            </motion.span>
-          </a>
-        </MagneticButton>
+              <motion.span whileHover={{ scale: 1.05 }}>
+                Samuel Sotomayor
+              </motion.span>
+            </Link>
+          </MagneticButton>
 
-        {/* Desktop Navigation */}
-        <ul className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link, index) => (
-            <motion.li
-              key={link.name}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <MagneticButton>
-                <a
-                  href={link.href}
-                  className="group relative py-2 text-sm font-medium text-slate-400 transition-colors hover:text-slate-100"
-                >
-                  {link.name}
-                  <motion.span
-                    className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#3B82F6]"
-                    whileHover={{ width: "100%" }}
-                    transition={{ duration: 0.2 }}
-                  />
-                </a>
-              </MagneticButton>
-            </motion.li>
-          ))}
-        </ul>
-
-        {/* Mobile Menu Button */}
-        <motion.button
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-[#26263A] bg-[#12121A] text-slate-200 md:hidden"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          whileTap={{ scale: 0.95 }}
-          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-        >
-          <AnimatePresence mode="wait">
-            {isMobileMenuOpen ? (
-              <motion.div
-                key="close"
-                initial={{ rotate: -90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: 90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <X className="h-5 w-5" />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="menu"
-                initial={{ rotate: 90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: -90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Menu className="h-5 w-5" />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.button>
-      </nav>
-    </motion.header>
-
-      {/* Mobile Menu */}
-    <AnimatePresence>
-      {isMobileMenuOpen && (
-        <motion.div
-          className="fixed inset-0 z-40 bg-[#0A0A0F] md:hidden"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        >
-          <nav className="flex h-full flex-col items-center justify-center gap-8">
+          {/* DESKTOP */}
+          <ul className="hidden items-center gap-10 md:flex">
             {navLinks.map((link, index) => (
-              <motion.a
+              <motion.li
                 key={link.name}
-                href={link.href}
-                className="text-3xl font-bold text-slate-100 hover:text-[#3B82F6] transition-colors"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <MagneticButton>
+                  <Link
+                    href={link.href}
+                    className="group relative text-sm font-medium text-[#A1A1AA] transition-colors duration-300 hover:text-[#F5F5F7]"
+                  >
+                    {link.name}
+
+                    <span className="absolute -bottom-1 left-0 h-0.5 **:w-0 bg-[#C6A75E] transition-all duration-300 group-hover:w-full" />
+                  </Link>
+                </MagneticButton>
+              </motion.li>
+            ))}
+          </ul>
+
+          {/* MOBILE BUTTON */}
+          <motion.button
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-[#1C1C21] bg-[#151518] text-[#F5F5F7] md:hidden"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            whileTap={{ scale: 0.95 }}
+            aria-label="Toggle menu"
+          >
+            <AnimatePresence mode="wait">
+              {isMobileMenuOpen ? (
+                <motion.div
+                  key="close"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <X className="h-5 w-5" />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="menu"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Menu className="h-5 w-5" />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.button>
+        </nav>
+      </motion.header>
+
+      {/* MOBILE MENU */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-10 bg-[#0B0B0C]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            {navLinks.map((link, index) => (
+              <motion.div
+                key={link.name}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ delay: index * 0.1 }}
-                onClick={() => setIsMobileMenuOpen(false)}
               >
-                {link.name}
-              </motion.a>
+                <Link
+                  href={link.href}
+                  className="text-3xl font-semibold text-[#F5F5F7] transition-colors hover:text-[#C6A75E]"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              </motion.div>
             ))}
 
-            <motion.a
-              href="#contact"
-              className="mt-4 rounded-full bg-[#3B82F6] px-8 py-4 text-lg font-medium text-white hover:bg-[#2563EB] transition-colors"
-              initial={{ opacity: 0, scale: 0.8 }}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ delay: 0.4 }}
-              onClick={() => setIsMobileMenuOpen(false)}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ delay: 0.3 }}
             >
-              Hire Me
-            </motion.a>
-          </nav>
-        </motion.div>
-      )}
-    </AnimatePresence>
+              <Link
+                href="/contact"
+                className="mt-6 inline-block rounded-full bg-[#C6A75E] px-10 py-4 text-lg font-semibold text-black transition-all duration-300 hover:bg-[#E6C77A]"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Hablemos
+              </Link>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }

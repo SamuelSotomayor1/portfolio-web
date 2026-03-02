@@ -37,7 +37,7 @@ const skillCategories = [
   },
 ]
 
-export function SkillsSection() {
+export function Skills() {
   return (
     <section id="skills" className="relative px-6 py-32 bg-[#111113]">
 

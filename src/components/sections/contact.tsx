@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import { Github, Linkedin, Twitter } from "lucide-react"
 import { ScrollSection, TextReveal, CharacterReveal, MagneticButton } from "@/components/animations"
 
-export function ContactSection() {
+export function Contact() {
 
   return (
     <section

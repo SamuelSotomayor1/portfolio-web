@@ -1,22 +1,23 @@
 "use client"
 
 import { CustomCursor } from "@/components/animations"
-import { Navbar, Footer } from "@/components/layout"
-import { Hero, Skills, Projects, Experience, Contact } from "@/components/sections"
+import HeroPage from "./home/page"
+import SkillsPage from "./skills/page"
+import ExperiencePage from "./experience/page"
+import ProjectsPage from "./projects/page"
+import ContactPage from "./contact/page"
 
 export default function Home() {
   return (
     <>
       <CustomCursor />
-      <Navbar />
-      <main className="relative overflow-hidden">
-        <Hero />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Contact />
+      <main>
+        <HeroPage />
+        <SkillsPage/>
+        <ExperiencePage/>
+        <ProjectsPage/>
+        <ContactPage/>
       </main>
-      <Footer />
     </>
   )
 }

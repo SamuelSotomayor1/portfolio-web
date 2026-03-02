@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { ArrowDown } from "lucide-react"
 import { CharacterReveal, TextReveal, MagneticButton} from "@/components/animations"
 
-export function HeroSection() {
+export function Hero() {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 py-20 bg-[#0B0B0C]">
 

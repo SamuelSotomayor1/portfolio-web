@@ -23,7 +23,7 @@ const experiences = [
   },
 ]
 
-export function ExperienceSection() {
+export function Experience() {
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
