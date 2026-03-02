@@ -7,10 +7,10 @@ import { MagneticButton } from "@/components/animations"
 import Link from "next/link"
 
 const navLinks = [
-  { name: "Skills", href: "/skills" },
-  { name: "Proyectos", href: "/projects" },
-  { name: "Experiencia", href: "/experience" },
-  { name: "Contacto", href: "/contact" },
+  { name: "Skills", href: "#skills" },
+  { name: "Proyectos", href: "#projects" },
+  { name: "Experiencia", href: "#experience" },
+  { name: "Contacto", href: "#contact" },
 ]
 
 export function Navbar() {
