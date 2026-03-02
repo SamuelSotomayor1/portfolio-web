@@ -6,33 +6,35 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-border px-6 py-8">
+    <footer className="bg-[#0B0B0C] border-t border-[#1C1C21] px-6 py-10">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 md:flex-row">
+
         <motion.p
-          className="text-sm text-muted-foreground"
+          className="text-sm text-[#A1A1AA]"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          {currentYear} Your Name. All rights reserved.
+          © {currentYear} Samuel Sotomayor. Todos los derechos reservados.
         </motion.p>
 
         <motion.p
-          className="text-sm text-muted-foreground"
+          className="text-sm text-[#A1A1AA]"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          Built with{" "}
+          Construido con{" "}
           <motion.span
-            className="text-primary"
-            animate={{ scale: [1, 1.2, 1] }}
-            transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
+            className="text-[#C6A75E] font-medium"
+            animate={{ opacity: [0.7, 1, 0.7] }}
+            transition={{ repeat: Number.POSITIVE_INFINITY, duration: 2 }}
           >
-            passion
+            v0
           </motion.span>{" "}
-          and Next.js
+          y Next.js
         </motion.p>
+
       </div>
     </footer>
   )
