@@ -39,13 +39,16 @@ const skillCategories = [
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="relative px-6 py-32">
+    <section id="skills" className="relative px-6 py-32 bg-[#111113]">
+
       <div className="mx-auto max-w-5xl">
+
         <ScrollSection>
-          <h2 className="mb-4 text-center text-4xl font-bold md:text-5xl lg:text-6xl">
+          <h2 className="mb-4 text-center text-4xl font-bold md:text-5xl lg:text-6xl text-[#F5F5F7]">
             <TextReveal>Skills & Tech Stack</TextReveal>
           </h2>
-          <p className="mx-auto mb-16 max-w-2xl text-center text-muted-foreground">
+
+          <p className="mx-auto mb-16 max-w-2xl text-center text-[#A1A1AA]">
             <TextReveal delay={0.2}>
               Tecnologías que utilizo en mi día a día para desarrollar aplicaciones web
             </TextReveal>
@@ -56,22 +59,25 @@ export function SkillsSection() {
           {skillCategories.map((category) => (
             <StaggerItem key={category.title}>
               <motion.div
-                className="group relative h-full overflow-hidden rounded-2xl border border-border bg-card/50 p-5 backdrop-blur-sm transition-colors hover:border-primary/50 hover:bg-card"
+                className="group relative h-full overflow-hidden rounded-2xl border border-[#26262B] bg-[#17171A] p-6 transition-all hover:border-[#C6A75E]/40"
                 whileHover={{ y: -4, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <div className="mb-4 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                    <category.icon className="h-5 w-5" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#111113] transition-all group-hover:bg-[#C6A75E]/10">
+                    <category.icon className="h-5 w-5 text-[#C6A75E]" />
                   </div>
-                  <h3 className="text-lg font-semibold">{category.title}</h3>
+
+                  <h3 className="text-lg font-semibold text-[#F5F5F7]">
+                    {category.title}
+                  </h3>
                 </div>
-                
+
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, idx) => (
                     <motion.span
                       key={skill}
-                      className="rounded-lg bg-secondary/80 px-3 py-1.5 text-sm font-medium text-secondary-foreground transition-all hover:bg-primary hover:text-primary-foreground"
+                      className="rounded-lg bg-[#111113] px-3 py-1.5 text-sm font-medium text-[#A1A1AA] transition-all hover:bg-[#C6A75E] hover:text-black"
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
@@ -83,10 +89,12 @@ export function SkillsSection() {
                     </motion.span>
                   ))}
                 </div>
+
               </motion.div>
             </StaggerItem>
           ))}
         </StaggerContainer>
+
       </div>
     </section>
   )
