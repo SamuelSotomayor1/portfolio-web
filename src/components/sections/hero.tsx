@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import { ArrowDown } from "lucide-react"
-import { CharacterReveal, TextReveal, MagneticButton} from "@/components/animations"
+import { TextReveal, MagneticButton} from "@/components/animations"
 
 export function Hero() {
   return (
@@ -12,10 +12,10 @@ export function Hero() {
       <div className="relative z-10 mx-auto max-w-5xl text-center">
 
         <h1 className="mb-6 text-5xl font-bold leading-tight tracking-tight md:text-7xl lg:text-8xl text-[#F5F5F7]">
-          <CharacterReveal delay={0.2}>Samuel</CharacterReveal>
+          <TextReveal delay={0.2}>Samuel</TextReveal>
           <br />
           <span className="text-[#C6A75E]">
-            <CharacterReveal delay={0.5}>Sotomayor</CharacterReveal>
+            <TextReveal delay={0.5}>Sotomayor</TextReveal>
           </span>
         </h1>
 

@@ -6,7 +6,6 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 import { Navbar, Footer } from "@/components/layout"
-import { CustomCursor } from "@/components/animations"
 
 const _spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -31,7 +30,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans antialiased">
-        <CustomCursor />
         <Navbar />
         <main>
           {children}

@@ -47,9 +47,7 @@ export function Skills() {
           </h2>
 
           <p className="mx-auto mb-16 max-w-2xl text-center text-[#A1A1AA]">
-            <TextReveal delay={0.2}>
               Tecnologías que utilizo en mi día a día para desarrollar aplicaciones web
-            </TextReveal>
           </p>
         </ScrollSection>
 

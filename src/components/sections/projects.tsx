@@ -41,10 +41,8 @@ export function Projects() {
           </h2>
 
           <p className="mx-auto mb-16 max-w-2xl text-center text-[#A1A1AA]">
-            <TextReveal delay={0.2}>
               Una lista de mis proyectos que demuestran mis skills y creatividad
               para construir soluciones digitales.
-            </TextReveal>
           </p>
         </ScrollSection>
 
