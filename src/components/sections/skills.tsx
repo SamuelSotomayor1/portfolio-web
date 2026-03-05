@@ -1,5 +1,3 @@
-"use client"
-
 import { motion } from "framer-motion"
 import { ScrollSection, StaggerContainer, StaggerItem, TextReveal } from "@/components/animations"
 import { Code2, Layout, Server, Database, Wrench, Palette } from "lucide-react"
