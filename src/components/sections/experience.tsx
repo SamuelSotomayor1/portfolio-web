@@ -1,8 +1,5 @@
-"use client"
-
-import { useRef } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
 import { ScrollSection, StaggerContainer, StaggerItem } from "@/components/animations"
+import { TimelineLine } from "../animations/sections/experience-animation"
 
 const experiences = [
   {
@@ -24,14 +21,6 @@ const experiences = [
 ]
 
 export function Experience() {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  })
-
-  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
-
   return (
     <section
       id="experience"
@@ -44,40 +33,29 @@ export function Experience() {
           </h2>
 
           <p className="mx-auto mb-16 max-w-2xl text-center text-[#A1A1AA]">
-              Mi trayectoria profesional construyendo productos digitales
+            Mi trayectoria profesional construyendo productos digitales
           </p>
         </ScrollSection>
 
-        <div ref={containerRef} className="relative">
-
-          {/* Timeline line */}
-          <div className="absolute left-0 top-0 h-full w-px bg-[#1C1C21] md:left-1/2 md:-translate-x-1/2">
-            <motion.div
-              className="w-full bg-[#C6A75E]"
-              style={{ height: lineHeight }}
-            />
-          </div>
+        <div className="relative">
+          
+          {/* Timeline animation */}
+          <TimelineLine />
 
           <StaggerContainer className="space-y-12" staggerDelay={0.2}>
             {experiences.map((exp, index) => (
               <StaggerItem key={exp.id}>
-                <motion.div
+                <div
                   className={`relative flex flex-col gap-4 pl-8 md:w-1/2 md:pl-0 ${
                     index % 2 === 0
                       ? "md:ml-auto md:pl-12"
                       : "md:mr-auto md:pr-12 md:text-right"
                   }`}
-                  whileHover={{ x: index % 2 === 0 ? 10 : -10 }}
                 >
-
-                  {/* Timeline dot (ÚNICO, limpio) */}
-                  <motion.div
+                  <div
                     className="absolute top-2 -left-2 h-4 w-4 rounded-full border-4 border-[#111113] bg-[#C6A75E] md:left-1/2 md:-translate-x-1/2"
-                    whileHover={{ scale: 1.4 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   />
 
-                  {/* Card */}
                   <div className="rounded-2xl border border-[#1C1C21] bg-[#151518] p-6 transition-all duration-300 hover:border-[#C6A75E] hover:shadow-[0_0_30px_rgba(198,167,94,0.15)]">
 
                     <span className="mb-2 inline-block text-sm text-[#C6A75E]">
@@ -102,17 +80,16 @@ export function Experience() {
                       }`}
                     >
                       {exp.skills.map((skill) => (
-                        <motion.span
+                        <span
                           key={skill}
                           className="rounded-full bg-[#1C1C21] border border-[#1C1C21] px-3 py-1 text-xs text-[#A1A1AA] transition-all duration-300 hover:bg-[#C6A75E] hover:text-black"
-                          whileHover={{ scale: 1.08 }}
                         >
                           {skill}
-                        </motion.span>
+                        </span>
                       ))}
                     </div>
                   </div>
-                </motion.div>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
