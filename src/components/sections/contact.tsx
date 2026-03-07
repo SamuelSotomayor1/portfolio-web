@@ -1,7 +1,7 @@
 import React from "react"
 import { motion } from "framer-motion"
 import { Github, Linkedin, Twitter } from "lucide-react"
-import { ScrollSection, TextReveal, MagneticButton } from "@/components/animations"
+import { ScrollSection, MagneticButton } from "@/components/animations"
 
 export function Contact() {
 
@@ -13,13 +13,11 @@ export function Contact() {
       <div className="mx-auto max-w-4xl">
         <ScrollSection>
           <h2 className="mb-4 text-center text-4xl font-bold text-[#F5F5F7] md:text-5xl lg:text-6xl">
-            <TextReveal delay={0.1}>Conectemos</TextReveal>
+            Conectemos
           </h2>
 
           <p className="mx-auto mb-16 max-w-2xl text-center text-[#A1A1AA]">
-            <TextReveal delay={0.3}>
               ¿Tienes un proyecto en mente o quieres conversar? Estaré encantado de escucharte.
-            </TextReveal>
           </p>
         </ScrollSection>
 

@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
-import { ScrollSection, StaggerContainer, StaggerItem, TextReveal } from "@/components/animations"
+import { ScrollSection, StaggerContainer, StaggerItem } from "@/components/animations"
 
 const experiences = [
   {
@@ -38,13 +38,11 @@ export function Experience() {
       <div className="mx-auto max-w-4xl">
         <ScrollSection>
           <h2 className="mb-4 text-center text-4xl font-bold text-[#F5F5F7] md:text-5xl lg:text-6xl">
-            <TextReveal>Experiencia</TextReveal>
+            Experiencia
           </h2>
 
           <p className="mx-auto mb-16 max-w-2xl text-center text-[#A1A1AA]">
-            <TextReveal delay={0.2}>
               Mi trayectoria profesional construyendo productos digitales
-            </TextReveal>
           </p>
         </ScrollSection>
 

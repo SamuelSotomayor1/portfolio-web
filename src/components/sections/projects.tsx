@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowUpRight, Github } from "lucide-react"
-import { ScrollSection, StaggerContainer, StaggerItem, TextReveal, MagneticButton } from "@/components/animations"
+import { ScrollSection, StaggerContainer, StaggerItem, MagneticButton } from "@/components/animations"
 
 const projects = [
   {
@@ -37,7 +37,7 @@ export function Projects() {
       <div className="mx-auto max-w-6xl">
         <ScrollSection>
           <h2 className="mb-4 text-center text-4xl font-bold text-[#F5F5F7] md:text-5xl lg:text-6xl">
-            <TextReveal>Proyectos</TextReveal>
+            Proyectos
           </h2>
 
           <p className="mx-auto mb-16 max-w-2xl text-center text-[#A1A1AA]">

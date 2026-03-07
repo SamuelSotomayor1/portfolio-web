@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import { ArrowDown } from "lucide-react"
-import { TextReveal, MagneticButton} from "@/components/animations"
+import { MagneticButton} from "@/components/animations"
 
 export function Hero() {
   return (
@@ -8,28 +8,31 @@ export function Hero() {
 
       {/* Gradiente muy sutil para profundidad */}
       <div className="absolute inset-0 bg-linear-to-b from-[#0B0B0C] via-[#111113]/40 to-[#0B0B0C]" />
-
+  
       <div className="relative z-10 mx-auto max-w-5xl text-center">
-
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          >
         <h1 className="mb-6 text-5xl font-bold leading-tight tracking-tight md:text-7xl lg:text-8xl text-[#F5F5F7]">
-          <TextReveal delay={0.2}>Samuel</TextReveal>
+            Samuel
           <br />
           <span className="text-[#C6A75E]">
-            <TextReveal delay={0.5}>Sotomayor</TextReveal>
+            Sotomayor
           </span>
         </h1>
 
         <p className="mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-[#A1A1AA] md:text-xl">
-          <TextReveal delay={0.8}>
             Ingeniero Civil Informático especializado en el Desarrollo de Software Full-Stack.
             Diseño y construyo aplicaciones escalables, eficientes y orientadas a resolver problemas reales.
-          </TextReveal>
         </p>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
           className="flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <MagneticButton>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { ScrollSection, StaggerContainer, StaggerItem, TextReveal } from "@/components/animations"
+import { ScrollSection, StaggerContainer, StaggerItem} from "@/components/animations"
 import { Code2, Layout, Server, Database, Wrench, Palette } from "lucide-react"
 
 const skillCategories = [
@@ -43,7 +43,7 @@ export function Skills() {
 
         <ScrollSection>
           <h2 className="mb-4 text-center text-4xl font-bold md:text-5xl lg:text-6xl text-[#F5F5F7]">
-            <TextReveal>Skills & Tech Stack</TextReveal>
+            Skills y Tech Stack
           </h2>
 
           <p className="mx-auto mb-16 max-w-2xl text-center text-[#A1A1AA]">
