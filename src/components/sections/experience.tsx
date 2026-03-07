@@ -24,7 +24,7 @@ export function Experience() {
   return (
     <section
       id="experience"
-      className="relative bg-[#111113] px-6 py-32 border-t border-[#1C1C21]"
+      className="relative bg-[#0B0B0C] px-6 py-32 border-t border-[#1C1C21]"
     >
       <div className="mx-auto max-w-4xl">
         <ScrollSection>

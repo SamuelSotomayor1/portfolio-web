@@ -7,6 +7,7 @@ import { MagneticButton } from "@/components/animations"
 import Link from "next/link"
 
 const navLinks = [
+  { name: "Sobre mi", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Proyectos", href: "#projects" },
   { name: "Experiencia", href: "#experience" },
@@ -129,13 +130,6 @@ export function Navbar() {
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ delay: 0.3 }}
             >
-              <Link
-                href="/contact"
-                className="mt-6 inline-block rounded-full bg-[#C6A75E] px-10 py-4 text-lg font-semibold text-black transition-all duration-300 hover:bg-[#E6C77A]"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Hablemos
-              </Link>
             </motion.div>
           </motion.div>
         )}

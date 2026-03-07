@@ -26,7 +26,7 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="relative bg-[#0B0B0C] px-6 py-32 border-t border-[#1C1C21]"
+      className="relative bg-[#111113] px-6 py-32 border-t border-[#1C1C21]"
     >
       <div className="mx-auto max-w-6xl">
         <ScrollSection>

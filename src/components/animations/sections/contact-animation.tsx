@@ -24,6 +24,8 @@ export function IconGithub({ children }: { children: ReactNode }) {
         className="flex h-12 w-12 items-center justify-center rounded-full border border-[#1C1C21] bg-[#151518] transition-all duration-300 hover:border-[#C6A75E] hover:bg-[#C6A75E] hover:text-black"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
     >
       {children}
     </motion.a>
@@ -39,6 +41,8 @@ export function IconLinkedin({ children }: { children: ReactNode }) {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         aria-label="LinkedIn"
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
     >
       {children}
     </motion.a>
@@ -54,6 +58,8 @@ export function IconTwitter({ children }: { children: ReactNode }) {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         aria-label="X"
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
     >
       {children}
     </motion.a>

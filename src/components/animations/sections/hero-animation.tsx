@@ -19,7 +19,7 @@ export function ArrowMove({ children }: { children: ReactNode }) {
   return (
     <motion.span
         animate={{ x: [0, 5, 0] }}
-        transition={{ repeat: Infinity, duration: 1.5 }}
+        transition={{ repeat: 2, duration: 1.5 }}
     >
       {children}
     </motion.span>
