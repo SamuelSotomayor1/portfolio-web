@@ -1,6 +1,6 @@
-import { motion } from "framer-motion"
 import { ScrollSection, StaggerContainer, StaggerItem} from "@/components/animations"
 import { Code2, Layout, Server, Database, Wrench, Palette } from "lucide-react"
+import { SkillsContainer, StacksContainer } from "../animations/sections/skills-animation"
 
 const skillCategories = [
   {
@@ -54,11 +54,7 @@ export function Skills() {
         <StaggerContainer className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" staggerDelay={0.08}>
           {skillCategories.map((category) => (
             <StaggerItem key={category.title}>
-              <motion.div
-                className="group relative h-full overflow-hidden rounded-2xl border border-[#26262B] bg-[#17171A] p-6 transition-all hover:border-[#C6A75E]/40"
-                whileHover={{ y: -4, scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              >
+              <SkillsContainer>
                 <div className="mb-4 flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#111113] transition-all group-hover:bg-[#C6A75E]/10">
                     <category.icon className="h-5 w-5 text-[#C6A75E]" />
@@ -70,23 +66,16 @@ export function Skills() {
                 </div>
 
                 <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill, idx) => (
-                    <motion.span
+                  {category.skills.map((skill) => (
+                    <StacksContainer
                       key={skill}
-                      className="rounded-lg bg-[#111113] px-3 py-1.5 text-sm font-medium text-[#A1A1AA] transition-all hover:bg-[#C6A75E] hover:text-black"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: idx * 0.05 }}
-                      whileHover={{ scale: 1.08 }}
-                      whileTap={{ scale: 0.95 }}
                     >
                       {skill}
-                    </motion.span>
+                    </StacksContainer>
                   ))}
                 </div>
 
-              </motion.div>
+              </SkillsContainer>
             </StaggerItem>
           ))}
         </StaggerContainer>

@@ -1,3 +1,5 @@
+"use client"
+
 import type { ReactNode } from "react"
 import { useRef } from "react"
 import { motion, useInView, type Variants } from "framer-motion"
